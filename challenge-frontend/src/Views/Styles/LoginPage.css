@@ -1,11 +1,75 @@
 .LoginPageContainer {
-
+ 
+  display: flex;
   background-color: #212121;
 
+  align-items: center;
   height: 100vh;
 }
 
+.LoginPageFormContainer {
+  background-color: #EEEEEE;
+  color: #263238;
+
+  width: 30%;
+  
+  margin: 0 auto;
+  padding: 40px;
+
+  border-radius: 20px;
+
+}
+
+
+
+
+.LoginButton {
+  color: #EEEEEE;
+  background-color: #263238;
+  
+  width: 100%;
+
+  padding: 10px;
+  border-radius: 10px;
+
+  transition: 0.2s;
+}
+.LoginButton:hover{
+  color: #212121;
+  background-color: transparent;
+  border: 2px solid #263238 ;
+}
+
+.SignUpButton {
+  color: #212121;
+  background-color: #EEEEEE;
+  
+  width: 100%;
+
+  padding: 10px;
+  border-radius: 10px;
+
+  transition: 0.2s;
+}
+
+.SignUpButton:hover{
+  color: #212121;
+  background-color: transparent;
+  border: 2px solid #263238 ;
+}
 
 #Title {
-  color: #FFF;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+
+  color: #212121;
+  margin: 0 0 ;
+}
+
+#LoginText {
+  font-size: 1.4rem;
+  text-align: center;
+
+  margin-top: 20px;
 }

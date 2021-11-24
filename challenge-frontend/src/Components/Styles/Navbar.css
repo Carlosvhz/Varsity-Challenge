@@ -1,0 +1,16 @@
+.NavbarContainer {
+  background-color: #212121;
+  
+  display: flex;
+  align-items: center;
+}
+
+.NavbarTitle {
+  color: #FAFAFA;
+  font-size: 2rem;
+}
+
+#LogoutText {
+  color: #FAFAFA;
+  font-size: 2rem;
+}
