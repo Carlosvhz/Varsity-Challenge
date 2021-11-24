@@ -1,6 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-import { Col, Row, Container, Button, Input } from "reactstrap";
+import {
+  Col,
+  Row,
+  Container,
+  Button,
+  Input,
+  Modal,
+  ModalBody,
+  ModalHeader,
+} from "reactstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import StandardLayout from "../Layouts/StandardLayout";
@@ -9,11 +18,38 @@ import Tweet from "../Components/Tweet";
 import "./Styles/HomePage.css";
 
 const HomePage = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
-
   useEffect(() => {
     console.log("Este es el usuario logeado HOMEPAGE: ", user);
   }, []);
+
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  const [open, setOpen] = useState(false);
+
+  /*Tweet states*/
+  const [content, setContent] = useState("");
+
+  const body = {
+    creator_name: "John Doe",
+    content,
+    creationDate: new Date(),
+  };
+
+  const changeValue = (e) => {
+    switch (e.name) {
+      case "content":
+        setContent(e.value);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleCreate = () => {
+    /*Use a regex to validate content*/
+    if (content !== "") {
+      console.log("Este es el contenido: ", body);
+    }
+  };
 
   return (
     <StandardLayout>
@@ -25,7 +61,14 @@ const HomePage = () => {
             </Col>
 
             <Col className="HomePageButtonContainer">
-              <Button className="HomePageButton">Crear nuevo Tweet</Button>
+              <Button
+                className="HomePageButton"
+                onClick={() => {
+                  setOpen(true);
+                }}
+              >
+                Crear nuevo Tweet
+              </Button>
             </Col>
           </Row>
 
@@ -36,6 +79,37 @@ const HomePage = () => {
           {/** sadawsdasdsadasdas  */}
         </Container>
       </Container>
+
+      <Modal isOpen={open} toggle={() => setOpen(false)}>
+        <ModalHeader>¿Qué está sucediendo?</ModalHeader>
+        <ModalBody>
+          <Row>
+            <Col>
+              <Input
+                type="textarea"
+                name="content"
+                value={content}
+                onChange={(e) => {
+                  changeValue(e);
+                }}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Button
+                className="HomePageButton"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCreate();
+                }}
+              >
+                Agregar
+              </Button>
+            </Col>
+          </Row>
+        </ModalBody>
+      </Modal>
     </StandardLayout>
   );
 };

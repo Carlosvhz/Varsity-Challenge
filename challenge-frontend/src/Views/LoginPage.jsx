@@ -23,7 +23,7 @@ const LoginPage = () => {
           <Row>
             <Col>
               <Button
-                className="LoginButton"
+                className="Button LoginButton"
                 onClick={(e) => {
                   e.preventDefault();
                   loginWithRedirect();
@@ -43,7 +43,7 @@ const LoginPage = () => {
           <Row>
             <Col>
               <Button
-                className="SignUpButton"
+                className="Button SignUpButton"
                 onClick={(e) => {
                   e.preventDefault();
                   loginWithRedirect({
