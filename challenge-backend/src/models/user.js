@@ -1,18 +1,17 @@
 const mongoose = require("mongoose");
 
-const tweetSchema = mongoose.Schema(
+const userSchema = mongoose.Schema(
   {
-    creator_name: {
+    nickname: {
       type: String,
       required: true,
     },
-    content: {
+    email: {
       type: String,
       required: true,
     },
-    creationDate: {
-      type: Date,
-      required: true,
+    following: {
+      type: [Object],
     },
     isActive: {
       type: Boolean,
@@ -23,4 +22,4 @@ const tweetSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("tweets", tweetSchema);
+module.exports = mongoose.model("users", userSchema);

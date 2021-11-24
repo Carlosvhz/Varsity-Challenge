@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import {
   Col,
   Row,
@@ -13,6 +12,8 @@ import {
 import { useAuth0 } from "@auth0/auth0-react";
 
 import StandardLayout from "../Layouts/StandardLayout";
+import { createTweet } from "../api/index";
+
 import Tweet from "../Components/Tweet";
 
 import "./Styles/HomePage.css";
@@ -29,7 +30,7 @@ const HomePage = () => {
   const [content, setContent] = useState("");
 
   const body = {
-    creator_name: "John Doe",
+    creator_name: user.nickname,
     content,
     creationDate: new Date(),
   };
@@ -44,10 +45,23 @@ const HomePage = () => {
     }
   };
 
+  const toggle = () => {
+    setOpen(false);
+    setContent("");
+  };
+
   const handleCreate = () => {
     /*Use a regex to validate content*/
     if (content !== "") {
-      console.log("Este es el contenido: ", body);
+      createTweet(body)
+        .then((result) => {
+          console.log("Its alive", result);
+          setOpen(false);
+          setContent("");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   };
 
@@ -80,7 +94,7 @@ const HomePage = () => {
         </Container>
       </Container>
 
-      <Modal isOpen={open} toggle={() => setOpen(false)}>
+      <Modal isOpen={open} toggle={toggle}>
         <ModalHeader>¿Qué está sucediendo?</ModalHeader>
         <ModalBody>
           <Row>
@@ -90,7 +104,7 @@ const HomePage = () => {
                 name="content"
                 value={content}
                 onChange={(e) => {
-                  changeValue(e);
+                  changeValue(e.currentTarget);
                 }}
               />
             </Col>

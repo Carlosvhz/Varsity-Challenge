@@ -22,3 +22,4 @@ app.use(express.json({ extended: false }));
 app.use(cors());
 
 app.use("/tweet", require("./src/routes/tweet.route.js"));
+app.use("/user", require("./src/routes/user.route.js"));

@@ -4,6 +4,8 @@ import { Col, Row, Container, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
+import { findUser } from "../api/index";
+
 import "../Views/Styles/LoginPage.css";
 
 const LoginPage = () => {
