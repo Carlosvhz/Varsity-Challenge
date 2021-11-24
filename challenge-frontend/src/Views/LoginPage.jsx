@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import StandardLayout from "../Layouts/StandardLayout";
 
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -16,7 +15,7 @@ const LoginPage = () => {
         <div className="container LoginPageFormContainer">
           <div className="row">
             <div className="col">
-              <div id="Title">¡Bienvenido!</div>
+              <div id="Title">¡Bienvenido a Tuiter!</div>
             </div>
           </div>
 
@@ -27,13 +26,7 @@ const LoginPage = () => {
                   className="LoginButton"
                   onClick={(e) => {
                     e.preventDefault();
-                    loginWithRedirect()
-                      .then(() => {
-                        navigate.push("/homepage");
-                      })
-                      .catch((e) => {
-                        console.log("error :c ", e);
-                      });
+                    loginWithRedirect();
                   }}
                 >
                   Iniciar sesión

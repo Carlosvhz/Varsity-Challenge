@@ -8,9 +8,20 @@
 .NavbarTitle {
   color: #FAFAFA;
   font-size: 2rem;
+  margin: 20px;
 }
 
 #LogoutText {
   color: #FAFAFA;
   font-size: 2rem;
+  
+  margin: 20px;
+
+  transition: 0.2s;
+}
+
+#LogoutText:hover {
+  color: #EF5350;
+  font-size: 2rem;
+  margin: 20px;
 }

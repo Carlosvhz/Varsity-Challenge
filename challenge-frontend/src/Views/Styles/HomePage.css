@@ -3,3 +3,23 @@
 
   height: 100vh;
 }
+
+.HomePageRowContainer{
+  padding: 20px 0;
+}
+ 
+
+.HomePageButtonContainer {
+  text-align: end;
+}
+
+
+.HomePageTitle {
+  font-size: 1.4rem;
+  color: #FAFAFA;
+}
+
+.HomePageButton {
+  background-color: #212121;
+  color: #212121;
+}

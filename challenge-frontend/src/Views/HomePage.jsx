@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
-import StandardLayout from "../Layouts/StandardLayout";
+
+import { Col, Row, Container, Button, Input } from "reactstrap";
 import { useAuth0 } from "@auth0/auth0-react";
+
+import StandardLayout from "../Layouts/StandardLayout";
+import Tweet from "../Components/Tweet";
 
 import "./Styles/HomePage.css";
 
@@ -13,21 +17,25 @@ const HomePage = () => {
 
   return (
     <StandardLayout>
-      <div className="HomePageContainer">
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              Bienvenido, aqui se encuentran los diferentes twits
-            </div>
+      <Container className="HomePageContainer" fluid>
+        <Container>
+          <Row className="HomePageRowContainer">
+            <Col>
+              <p className="HomePageTitle">Página Principal</p>
+            </Col>
 
-            <div className="col">
-              <button>Crear nuevo twit</button>
-            </div>
-          </div>
+            <Col className="HomePageButtonContainer">
+              <Button className="HomePageButton">Crear nuevo Tweet</Button>
+            </Col>
+          </Row>
 
-          <div className="row"></div>
-        </div>
-      </div>
+          {/** sadawsdasdsadasdas  */}
+          <Row>
+            <Tweet />
+          </Row>
+          {/** sadawsdasdsadasdas  */}
+        </Container>
+      </Container>
     </StandardLayout>
   );
 };
