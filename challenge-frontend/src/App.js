@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import LoginPage from "./Views/LoginPage";
 import HomePage from "./Views/HomePage";
+import Redirect from "./Views/Redirect";
 
 import PrivateRoute from "./Components/PrivateRoute";
 
@@ -12,11 +13,17 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route exact path="/homepage" element={<PrivateRoute />}>
-          <Route exact path="/homepage" element={<HomePage />} />
-        </Route>
+        <Route
+          path="/homepage"
+          element={
+            <PrivateRoute>
+              <HomePage />
+            </PrivateRoute>
+          }
+        />
 
-        <Route path="/" element={<LoginPage />} />
+        <Route exact path="/" element={<LoginPage />} />
+        <Route exact path="/redirect" element={<Redirect />} />
       </Routes>
     </Router>
   );

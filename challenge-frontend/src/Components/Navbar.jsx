@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Col, Row, Button, Container } from "reactstrap";
+import { Col, Row, Container } from "reactstrap";
 
 import { useAuth0 } from "@auth0/auth0-react";
 import DivButton from "./DivButton";

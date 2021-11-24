@@ -1,0 +1,12 @@
+.RedirectContainer {
+  
+  background-color: #37474F;
+
+  height: 100vh;
+}
+
+.Redirect {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}

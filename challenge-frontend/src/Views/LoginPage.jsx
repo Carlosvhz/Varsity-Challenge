@@ -1,6 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Col, Row, Container, Button } from "reactstrap";
 
+import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import "../Views/Styles/LoginPage.css";
@@ -11,61 +12,57 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="container-fluid LoginPageContainer">
-        <div className="container LoginPageFormContainer">
-          <div className="row">
-            <div className="col">
+      <Container className="LoginPageContainer" fluid>
+        <Container className="LoginPageFormContainer">
+          <Row>
+            <Col>
               <div id="Title">¡Bienvenido a Tuiter!</div>
-            </div>
-          </div>
+            </Col>
+          </Row>
 
-          <div className="row">
-            <div className="col">
-              <div id="Title">
-                <button
-                  className="LoginButton"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    loginWithRedirect();
-                  }}
-                >
-                  Iniciar sesión
-                </button>
-              </div>
-            </div>
-          </div>
+          <Row>
+            <Col>
+              <Button
+                className="LoginButton"
+                onClick={(e) => {
+                  e.preventDefault();
+                  loginWithRedirect();
+                }}
+              >
+                Iniciar sesión
+              </Button>
+            </Col>
+          </Row>
 
-          <div className="row">
+          <Row>
             <div className="col">
               <div id="LoginText"> ¿No tienes una cuenta? </div>
             </div>
-          </div>
+          </Row>
 
-          <div className="row">
-            <div className="col">
-              <div id="Title">
-                <button
-                  className="SignUpButton"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    loginWithRedirect({
-                      screen_hint: "signup",
+          <Row>
+            <Col>
+              <Button
+                className="SignUpButton"
+                onClick={(e) => {
+                  e.preventDefault();
+                  loginWithRedirect({
+                    screen_hint: "signup",
+                  })
+                    .then(() => {
+                      navigate.push("/homepage");
                     })
-                      .then(() => {
-                        navigate.push("/homepage");
-                      })
-                      .catch((e) => {
-                        console.log("error :c ", e);
-                      });
-                  }}
-                >
-                  Crear cuenta
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                    .catch((e) => {
+                      console.log("error :c ", e);
+                    });
+                }}
+              >
+                Crear cuenta
+              </Button>
+            </Col>
+          </Row>
+        </Container>
+      </Container>
     </>
   );
 };
