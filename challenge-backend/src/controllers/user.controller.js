@@ -20,7 +20,7 @@ exports.createUser = async (req, res) => {
 };
 
 exports.findUser = async (req, res) => {
-  const { email } = req.body;
+  const { email } = req.params;
   try {
     const currentUser = await user.findOne({ email });
     if (currentUser)

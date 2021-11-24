@@ -15,12 +15,15 @@ import StandardLayout from "../Layouts/StandardLayout";
 import { createTweet } from "../api/index";
 
 import Tweet from "../Components/Tweet";
+import useUser from "../Providers/useUser";
 
 import "./Styles/HomePage.css";
 
 const HomePage = () => {
+  const { currentUser } = useUser;
+
   useEffect(() => {
-    console.log("Este es el usuario logeado HOMEPAGE: ", user);
+    console.log("Este es el usuario logeado HOMEPAGE: ", user.email);
   }, []);
 
   const { user, isAuthenticated, isLoading } = useAuth0();

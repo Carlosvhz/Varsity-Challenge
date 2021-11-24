@@ -10,9 +10,6 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    following: {
-      type: [Object],
-    },
     isActive: {
       type: Boolean,
       required: false,
