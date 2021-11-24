@@ -1,9 +1,11 @@
 import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Navigate, Outlet } from "react-router-dom";
 
-import { Route } from "react-router-dom";
+const PrivateRoute = () => {
+  const { user, isAuthenticated, isLoading } = useAuth0();
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
-  return <Route {...rest}></Route>;
+  return isAuthenticated ? <Outlet /> : <Navigate to="/" />;
 };
 
 export default PrivateRoute;

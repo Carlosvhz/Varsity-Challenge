@@ -2,51 +2,63 @@ import React from "react";
 
 import StandardLayout from "../Layouts/StandardLayout";
 
+import { useAuth0 } from "@auth0/auth0-react";
+
 import "../Views/Styles/LoginPage.css";
 
 const LoginPage = () => {
+  const { loginWithRedirect } = useAuth0();
+
   return (
     <StandardLayout>
       <div className="container-fluid LoginPageContainer">
         <div className="container">
-          <div classNam="row">
+          <div className="row">
             <div className="col">
               <div id="Title">¡Bienvenido!</div>
             </div>
           </div>
 
-          <div classNam="row">
+          <div className="row">
             <div className="col">
-              <div id="Title">Ingresa tu correo electrónico:</div>
+              <div id="Title">Puedes iniciar sesión aquí</div>
             </div>
           </div>
 
-          <div classNam="row">
+          <div className="row">
             <div className="col">
               <div id="Title">
-                <input type="text" />
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    loginWithRedirect();
+                  }}
+                >
+                  Iniciar sesión
+                </button>
               </div>
             </div>
           </div>
 
-          <div classNam="row">
+          <div className="row">
             <div className="col">
-              <div id="Title">Ingresa tu correo contraseña:</div>
+              <div id="Title">Puedes crear tu cuenta aquí</div>
             </div>
           </div>
 
-          <div classNam="row">
+          <div className="row">
             <div className="col">
               <div id="Title">
-                <input type="password" />
-              </div>
-            </div>
-          </div>
-
-          <div classNam="row">
-            <div className="col">
-              <div id="Title">
-                <button>Iniciar sesión</button>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    loginWithRedirect({
+                      screen_hint: "signup",
+                    });
+                  }}
+                >
+                  Crear cuenta
+                </button>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ require("dotenv/config");
 const express = require("express");
 const mongoose = require("mongoose");
 
+const cors = require("cors");
 const port = process.env.PORT;
 const uri = process.env.URI;
 
@@ -16,3 +17,6 @@ mongoose
   );
 
 const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ extended: false }));
+app.use(cors());
