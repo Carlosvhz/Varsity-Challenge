@@ -1,28 +1,42 @@
-.TweetContainer {
+.Tweet {
   border: 2px solid #607D8B;
-  border-radius: 5px;
+  border-radius: 10px;
 
-  width: 100%;
+  color: #ECEFF1;
+
   height: 100px;
 
-  margin: 5px 0;
+  margin: 5px;
+  padding: 15px;
+
+  display: flex;
+  justify-content: space-between;
 
   transition: 0.2s
 }
 
-.TweetContainer:hover {
-
+.Tweet:hover {
   border: 2px solid #ECEFF1; 
-
 }
 
+/*Container that contains the picture*/
+.Tweet > .PictureContainer{
+  margin-right: 10px;
+}
+
+
 .TweetPicture {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 
   border-radius: 50px;
 }
 
-.TweetDescription {
-  color: #ECEFF1;
+.Tweet > .TextContainer {
+  flex: 1;
+}
+
+.TextContainer > .TextContainerName {
+  font-size: 1.1rem;
+  font-weight: bold;
 }

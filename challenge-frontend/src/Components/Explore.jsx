@@ -33,19 +33,20 @@ const Explore = () => {
           </Col>
         </Row>
       ) : (
-        tweets.map((item, index) => (
-          <Row>
-            {console.log(item)}
-            <Tweet
-              picture={item.creatorPicture}
-              name={item.creatorName}
-              content={item.content}
-              date={item.date}
-              key={index}
-            />
-            ;
-          </Row>
-        ))
+        <Row>
+          {tweets.map((item, index) => (
+            <Col sm="6">
+              {console.log(item)}
+              <Tweet
+                picture={item.creatorPicture}
+                name={item.creatorName}
+                content={item.content}
+                date={item.date}
+                key={index}
+              />
+            </Col>
+          ))}
+        </Row>
       )}
     </>
   );

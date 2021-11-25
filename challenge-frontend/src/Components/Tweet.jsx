@@ -7,18 +7,18 @@ import "./Styles/Tweet.css";
 
 const Tweet = ({ picture, name, content, date }) => {
   return (
-    <DivButton className="TweetContainer">
-      <Row>
-        <Col>
-          <img src={picture} alt={name} className="TweetPicture" />
-        </Col>
+    <DivButton className="Tweet">
+      <div className="PictureContainer">
+        <img src={picture} alt={name} className="TweetPicture" />
+      </div>
 
-        <Col>{name}</Col>
+      <div className="TextContainer">
+        <div className="TextContainerName">{name}</div>
 
-        <Col>
-          <p className="TweetDescription">{content}</p>
-        </Col>
-      </Row>
+        <div>{content}</div>
+
+        <div>{/* íconos */}</div>
+      </div>
     </DivButton>
   );
 };

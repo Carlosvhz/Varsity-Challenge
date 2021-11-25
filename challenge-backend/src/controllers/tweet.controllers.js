@@ -41,7 +41,7 @@ exports.findAllUserTweets = async (req, res) => {
   const { id } = req.params;
   try {
     const tweets = await tweet.find({
-      creatorId: { $not: mongoose.Types.ObjectId(id) },
+      creatorId: { $ne: mongoose.Types.ObjectId(id) },
     });
     res.status(200).json({ message: "Success", data: tweets });
   } catch (error) {

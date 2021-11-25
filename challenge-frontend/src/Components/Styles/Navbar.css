@@ -1,8 +1,5 @@
 .NavbarContainer {
   background-color: #212121;
-  
-  display: flex;
-  align-items: center;
 }
 
 .NavbarTitle {
@@ -11,9 +8,18 @@
   margin: 20px;
 }
 
+.NavbarLogo{
+  width: 100%;
+}
+
 #LogoutText {
   color: #FAFAFA;
-  font-size: 2rem;
+  font-size: 1rem;
+  text-align: end;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
   
   margin: 20px;
 
@@ -22,6 +28,5 @@
 
 #LogoutText:hover {
   color: #EF5350;
-  font-size: 2rem;
   margin: 20px;
 }

@@ -10,6 +10,8 @@ import {
   ModalHeader,
 } from "reactstrap";
 import { useAuth0 } from "@auth0/auth0-react";
+import { MdOutlineExplore } from "react-icons/md";
+import { RiUserFollowLine, RiProfileLine, RiPencilLine } from "react-icons/ri";
 
 import { createTweet } from "../api/index";
 import useUser from "../Providers/useUser";
@@ -71,10 +73,23 @@ const HomePage = () => {
 
   return (
     <StandardLayout>
-      <Container className="HomePageContainer" fluid>
-        <Container>
-          <Row className="HomePageRowContainer">
-            <Col sm="4">
+      <Container className="HomePage" fluid>
+        <Container className="HomePageContainer">
+          <Row>
+            <Col className="HomePageButtonContainer">
+              <DivButton
+                className="HomePageButton"
+                action={() => {
+                  setOpen(true);
+                }}
+              >
+                Create new Tweet <RiPencilLine />
+              </DivButton>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col sm="2">
               <Row>
                 <Col>
                   <DivButton
@@ -85,9 +100,11 @@ const HomePage = () => {
                       setTab("Explore");
                     }}
                   >
-                    Explore
+                    Explore <MdOutlineExplore />
                   </DivButton>
                 </Col>
+              </Row>
+              <Row>
                 <Col>
                   <DivButton
                     className={`HomePageTitle ${
@@ -97,9 +114,11 @@ const HomePage = () => {
                       setTab("Follows");
                     }}
                   >
-                    Follows
+                    Follows <RiUserFollowLine />
                   </DivButton>
                 </Col>
+              </Row>
+              <Row>
                 <Col>
                   <DivButton
                     className={`HomePageTitle ${
@@ -109,33 +128,22 @@ const HomePage = () => {
                       setTab("Tweets");
                     }}
                   >
-                    Tweets
+                    My Tweets <RiProfileLine />
                   </DivButton>
                 </Col>
               </Row>
             </Col>
 
-            <Col className="HomePageButtonContainer">
-              <Button
-                className="HomePageButton"
-                onClick={() => {
-                  setOpen(true);
-                }}
-              >
-                Create new Tweet
-              </Button>
+            <Col sm="10">
+              {tab === "Follows" ? (
+                <></>
+              ) : tab === "Tweets" ? (
+                <MyTweets />
+              ) : (
+                <Explore />
+              )}
             </Col>
           </Row>
-
-          {/** sadawsdasdsadasdas  */}
-          {tab === "Follows" ? (
-            <></>
-          ) : tab === "Tweets" ? (
-            <MyTweets />
-          ) : (
-            <Explore />
-          )}
-          {/** sadawsdasdsadasdas  */}
         </Container>
       </Container>
 
