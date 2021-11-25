@@ -1,8 +1,8 @@
 import React from "react";
 import { Col, Row, Container } from "reactstrap";
 
-const MyProfile = () => {
+const MyTweets = () => {
   return <Container></Container>;
 };
 
-export default MyProfile;
+export default MyTweets;

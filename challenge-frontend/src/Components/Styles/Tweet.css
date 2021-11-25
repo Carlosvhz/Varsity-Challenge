@@ -6,4 +6,23 @@
   height: 100px;
 
   margin: 5px 0;
+
+  transition: 0.2s
+}
+
+.TweetContainer:hover {
+
+  border: 2px solid #ECEFF1; 
+
+}
+
+.TweetPicture {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50px;
+}
+
+.TweetDescription {
+  color: #ECEFF1;
 }

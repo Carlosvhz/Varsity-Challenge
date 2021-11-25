@@ -12,21 +12,23 @@ import {
 import { useAuth0 } from "@auth0/auth0-react";
 
 import StandardLayout from "../Layouts/StandardLayout";
-import { createTweet } from "../api/index";
+import { createTweet, findUser } from "../api/index";
 
 import Tweet from "../Components/Tweet";
 import useUser from "../Providers/useUser";
+import DivButton from "../Components/DivButton";
+
+// Importing Viwews Components
+import Explore from "../Components/Explore";
 
 import "./Styles/HomePage.css";
 
 const HomePage = () => {
-  const { currentUser } = useUser();
-
-  useEffect(() => {
-    console.log("Este es el usuario logeado HOMEPAGE: ", currentUser);
-  }, []);
+  const { currentUser, setCurrentUser } = useUser();
 
   const { user, isAuthenticated, isLoading } = useAuth0();
+
+  const [tab, setTab] = useState("Explore");
   const [open, setOpen] = useState(false);
 
   /*Tweet states*/
@@ -74,8 +76,18 @@ const HomePage = () => {
       <Container className="HomePageContainer" fluid>
         <Container>
           <Row className="HomePageRowContainer">
-            <Col>
-              <p className="HomePageTitle">Página Principal</p>
+            <Col sm="4">
+              <Row>
+                <Col>
+                  <DivButton className="HomePageTitle">Explore</DivButton>
+                </Col>
+                <Col>
+                  <DivButton className="HomePageTitle">Follows</DivButton>
+                </Col>
+                <Col>
+                  <DivButton className="HomePageTitle">Tweets</DivButton>
+                </Col>
+              </Row>
             </Col>
 
             <Col className="HomePageButtonContainer">
@@ -85,21 +97,19 @@ const HomePage = () => {
                   setOpen(true);
                 }}
               >
-                Crear nuevo Tweet
+                Create new Tweet
               </Button>
             </Col>
           </Row>
 
           {/** sadawsdasdsadasdas  */}
-          <Row>
-            <Tweet />
-          </Row>
+          <Explore />
           {/** sadawsdasdsadasdas  */}
         </Container>
       </Container>
 
       <Modal isOpen={open} toggle={toggle}>
-        <ModalHeader>¿Qué está sucediendo?</ModalHeader>
+        <ModalHeader>¿What happened?</ModalHeader>
         <ModalBody>
           <Row>
             <Col>
@@ -122,7 +132,7 @@ const HomePage = () => {
                   handleCreate();
                 }}
               >
-                Agregar
+                Add
               </Button>
             </Col>
           </Row>
