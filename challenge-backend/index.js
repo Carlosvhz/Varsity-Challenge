@@ -10,7 +10,9 @@ const uri = process.env.URI;
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() =>
-    app.listen(port, () => console.log("Database connected succesfully"))
+    app.listen(port, () =>
+      console.log("Database connected succesfully on port", port)
+    )
   )
   .catch((e) =>
     console.log(
@@ -29,8 +31,6 @@ if (process.env.NODE_ENV === "production") {
     );
   });
 }
-
-console.log();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ extended: false }));
