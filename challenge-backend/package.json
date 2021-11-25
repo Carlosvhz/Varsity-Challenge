@@ -8,7 +8,7 @@
     "build": "cd ../challenge-frontend && npm run build",
     "install-client": "cd ../challenge-frontend && npm install",
     "install-server": "npm install",
-    "heroku-postbuild": "npm run install-client  && install-server && npm run build",
+    "heroku-postbuild": "npm run install-client && install-server && npm run build",
     "start": "nodemon index.js"
   },
   "author": "",

@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd challenge-frontend && npm run build",
     "install-client": "cd challenge-frontend && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build",
+    "install-server": "cd challenge-backend && npm install",
+    "heroku-postbuild": "npm run install-client && npm run install-server && npm run build",
     "start": "cd challenge-backend && nodemon index.js"
   }
 }
