@@ -20,7 +20,7 @@ const Navbar = () => {
 
         <Col id="LogoutText">
           <DivButton
-            onClick={() => {
+            action={() => {
               logout();
               history.push("/");
             }}

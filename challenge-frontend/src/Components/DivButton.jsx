@@ -20,7 +20,11 @@ const DivButton = ({
       className={className}
       role="button"
       tabIndex={0}
-      onClick={act}
+      onClick={() => {
+        if (action) {
+          act();
+        }
+      }}
       onKeyPress={(e) => {
         if (e.key === "Enter") {
           act();

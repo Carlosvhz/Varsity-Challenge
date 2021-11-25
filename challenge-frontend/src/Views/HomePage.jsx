@@ -14,7 +14,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import StandardLayout from "../Layouts/StandardLayout";
 import { createTweet, findUser } from "../api/index";
 
-import Tweet from "../Components/Tweet";
 import useUser from "../Providers/useUser";
 import DivButton from "../Components/DivButton";
 
@@ -25,9 +24,9 @@ import MyTweets from "../Components/MyTweets";
 import "./Styles/HomePage.css";
 
 const HomePage = () => {
-  const { currentUser, setCurrentUser } = useUser();
+  const { currentUser } = useUser();
 
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user } = useAuth0();
 
   const [tab, setTab] = useState("Tweets");
   const [open, setOpen] = useState(false);
@@ -84,7 +83,7 @@ const HomePage = () => {
                     className={`HomePageTitle ${
                       tab === "Explore" ? "HomePageTitleSelected" : ""
                     }`}
-                    onClick={() => {
+                    action={() => {
                       setTab("Explore");
                     }}
                   >
@@ -96,7 +95,7 @@ const HomePage = () => {
                     className={`HomePageTitle ${
                       tab === "Follows" ? "HomePageTitleSelected" : ""
                     }`}
-                    onClick={() => {
+                    action={() => {
                       setTab("Follows");
                     }}
                   >
@@ -108,7 +107,7 @@ const HomePage = () => {
                     className={`HomePageTitle ${
                       tab === "Tweets" ? "HomePageTitleSelected" : ""
                     }`}
-                    onClick={() => {
+                    action={() => {
                       setTab("Tweets");
                     }}
                   >
