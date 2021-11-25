@@ -17,6 +17,16 @@
 .HomePageTitle {
   font-size: 1.4rem;
   color: #FAFAFA;
+  transition: 0.2s;
+}
+
+.HomePageTitle:hover{
+  color: #272525;
+}
+
+.HomePageTitleSelected {
+  color: #212121;
+
 }
 
 .HomePageButton {

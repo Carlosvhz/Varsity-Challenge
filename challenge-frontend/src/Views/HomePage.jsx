@@ -79,13 +79,40 @@ const HomePage = () => {
             <Col sm="4">
               <Row>
                 <Col>
-                  <DivButton className="HomePageTitle">Explore</DivButton>
+                  <DivButton
+                    className={`HomePageTitle ${
+                      tab === "Explore" ? "HomePageTitleSelected" : ""
+                    }`}
+                    onClick={() => {
+                      setTab("Explore");
+                    }}
+                  >
+                    Explore
+                  </DivButton>
                 </Col>
                 <Col>
-                  <DivButton className="HomePageTitle">Follows</DivButton>
+                  <DivButton
+                    className={`HomePageTitle ${
+                      tab === "Follows" ? "HomePageTitleSelected" : ""
+                    }`}
+                    onClick={() => {
+                      setTab("Follows");
+                    }}
+                  >
+                    Follows
+                  </DivButton>
                 </Col>
                 <Col>
-                  <DivButton className="HomePageTitle">Tweets</DivButton>
+                  <DivButton
+                    className={`HomePageTitle ${
+                      tab === "Tweets" ? "HomePageTitleSelected" : ""
+                    }`}
+                    onClick={() => {
+                      setTab("Tweets");
+                    }}
+                  >
+                    Tweets
+                  </DivButton>
                 </Col>
               </Row>
             </Col>
@@ -103,7 +130,7 @@ const HomePage = () => {
           </Row>
 
           {/** sadawsdasdsadasdas  */}
-          <Explore />
+          {tab === "Follows" ? <></> : tab === "Tweets" ? <></> : <Explore />}
           {/** sadawsdasdsadasdas  */}
         </Container>
       </Container>
