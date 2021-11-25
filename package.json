@@ -1,0 +1,12 @@
+{
+  "name": "challenge-backend",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd challenge-frontend && npm run build",
+    "install-client": "cd challenge-frontend && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "cd challenge-backend && nodemon index.js"
+  }
+}
