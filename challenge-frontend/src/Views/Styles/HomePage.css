@@ -14,6 +14,7 @@
 }
 
 
+/*Tab styles*/
 .HomePageTitle {
   font-size: 1.4rem;
   color: #FAFAFA;
@@ -29,6 +30,8 @@
 
 }
 
+
+/*Create button*/
 .HomePageButton {
   background-color: #212121;
   color: #212121;

@@ -5,7 +5,7 @@ import { Container, Spinner, Col, Row } from "reactstrap";
 
 import useUser from "../Providers/useUser";
 
-import { findUser } from "../api/index";
+import { findUser, createUser } from "../api/index";
 
 import "./Styles/Redirect.css";
 
@@ -21,8 +21,15 @@ const Redirect = () => {
           setCurrentUser(data.data);
           setLoading(false);
         })
-        .catch((err) => {
-          console.error(err);
+        .catch(() => {
+          createUser({ nickname: user.nickname, email: user.email })
+            .then(({ data }) => {
+              setCurrentUser(data.data);
+              setLoading(false);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
         });
     }
   }, [user]);
