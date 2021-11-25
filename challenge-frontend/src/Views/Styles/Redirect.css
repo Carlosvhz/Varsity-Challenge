@@ -1,12 +1,13 @@
 .RedirectContainer {
-  
   background-color: #37474F;
+
+  display: flex;
+  align-items: center;
 
   height: 100vh;
 }
 
-.Redirect {
-  display: flex;
-  align-items: center;
-  text-align: center;
+.RedirectSpinner {
+  margin: 0 auto;
 }
+

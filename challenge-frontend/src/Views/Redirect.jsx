@@ -37,13 +37,9 @@ const Redirect = () => {
   return isLoading || loading ? (
     <>
       <Container className="RedirectContainer" fluid>
-        <Container className="Redirect">
-          <Row>
-            <Col>
-              <Spinner> Cargando...</Spinner>
-            </Col>
-          </Row>
-        </Container>
+        <div className="RedirectSpinner">
+          <Spinner type="grow" size="xl" />
+        </div>
       </Container>
     </>
   ) : (

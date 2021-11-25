@@ -4,8 +4,6 @@ import { Col, Row, Container, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
-import { findUser } from "../api/index";
-
 import "../Views/Styles/LoginPage.css";
 
 const LoginPage = () => {
@@ -15,10 +13,10 @@ const LoginPage = () => {
   return (
     <>
       <Container className="LoginPageContainer" fluid>
-        <Container className="LoginPageFormContainer">
+        <div className="LoginPageFormContainer">
           <Row>
             <Col>
-              <div id="Title">¡Bienvenido a Tuiter!</div>
+              <div id="LoginTitle">¡Bienvenido a Tuiter!</div>
             </Col>
           </Row>
 
@@ -63,7 +61,7 @@ const LoginPage = () => {
               </Button>
             </Col>
           </Row>
-        </Container>
+        </div>
       </Container>
     </>
   );

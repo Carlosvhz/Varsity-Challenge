@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Col,
   Row,
@@ -11,13 +11,11 @@ import {
 } from "reactstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 
-import StandardLayout from "../Layouts/StandardLayout";
-import { createTweet, findUser } from "../api/index";
-
+import { createTweet } from "../api/index";
 import useUser from "../Providers/useUser";
-import DivButton from "../Components/DivButton";
+import StandardLayout from "../Layouts/StandardLayout";
 
-// Importing Viwews Components
+import DivButton from "../Components/DivButton";
 import Explore from "../Components/Explore";
 import MyTweets from "../Components/MyTweets";
 
