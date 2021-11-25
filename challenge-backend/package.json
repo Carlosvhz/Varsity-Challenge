@@ -1,7 +1,7 @@
 {
   "name": "challenge-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a Twitter Clone, well it tries to be",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "heroku-postbuild": "npm run install-client && install-server && npm run build",
     "start": "nodemon index.js"
   },
-  "author": "",
+  "author": "Carlos Varela",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
