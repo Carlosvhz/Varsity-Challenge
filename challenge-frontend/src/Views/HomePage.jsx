@@ -34,13 +34,6 @@ const HomePage = () => {
   /*Tweet states*/
   const [content, setContent] = useState("");
 
-  const body = {
-    creatorId: currentUser._id,
-    creatorName: user.nickname,
-    creatorPicture: user.picture,
-    content,
-  };
-
   const changeValue = (e) => {
     switch (e.name) {
       case "content":
@@ -59,6 +52,12 @@ const HomePage = () => {
   const handleCreate = () => {
     /*Use a regex to validate content*/
     if (content !== "") {
+      const body = {
+        creatorId: currentUser._id,
+        creatorName: user.nickname,
+        creatorPicture: user.picture,
+        content,
+      };
       createTweet(body)
         .then((result) => {
           console.log("Its alive", result);

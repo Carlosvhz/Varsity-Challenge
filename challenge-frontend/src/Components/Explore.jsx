@@ -22,7 +22,7 @@ const Explore = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [currentUser._id]);
 
   return (
     <>
@@ -35,14 +35,12 @@ const Explore = () => {
       ) : (
         <Row>
           {tweets.map((item, index) => (
-            <Col sm="6">
-              {console.log(item)}
+            <Col sm="6" key={`my_explore_tweet_${index}`}>
               <Tweet
                 picture={item.creatorPicture}
                 name={item.creatorName}
                 content={item.content}
                 date={item.createdAt}
-                key={index}
               />
             </Col>
           ))}

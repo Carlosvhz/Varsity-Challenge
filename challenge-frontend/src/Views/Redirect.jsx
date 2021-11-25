@@ -32,7 +32,7 @@ const Redirect = () => {
             });
         });
     }
-  }, [user]);
+  }, [setCurrentUser, user]);
 
   return isLoading || loading ? (
     <>
