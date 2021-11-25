@@ -1,4 +1,5 @@
 require("dotenv/config");
+const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
 
@@ -19,6 +20,18 @@ mongoose
   );
 
 const app = express();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../challenge-frontend/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.join(__dirname, "..", "challenge-frontend", "build", "index.html")
+    );
+  });
+}
+
+console.log();
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ extended: false }));
 app.use(cors());
