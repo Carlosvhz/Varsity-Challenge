@@ -23,6 +23,13 @@ mongoose
 
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ extended: false }));
+app.use(cors());
+
+app.use("/tweet", require("./src/routes/tweet.route.js"));
+app.use("/user", require("./src/routes/user.route.js"));
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../challenge-frontend/build")));
   app.get("*", (req, res) => {
@@ -31,10 +38,3 @@ if (process.env.NODE_ENV === "production") {
     );
   });
 }
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json({ extended: false }));
-app.use(cors());
-
-app.use("/tweet", require("./src/routes/tweet.route.js"));
-app.use("/user", require("./src/routes/user.route.js"));
