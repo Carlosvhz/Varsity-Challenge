@@ -8,10 +8,12 @@ const uri = process.env.URI;
 
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => app.listen(port, () => console.log("Connected bro :3")))
+  .then(() =>
+    app.listen(port, () => console.log("Database connected succesfully"))
+  )
   .catch((e) =>
     console.log(
-      "Hey something goes wrong, u should check the connection again :c ... ",
+      "Hey something goes wrong, u should check the connection again ",
       e
     )
   );

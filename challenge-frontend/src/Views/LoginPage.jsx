@@ -16,7 +16,7 @@ const LoginPage = () => {
         <div className="LoginPageFormContainer">
           <Row>
             <Col>
-              <div id="LoginTitle">¡Bienvenido a Tuiter!</div>
+              <div id="LoginTitle">Welcome to TwitterClone!</div>
             </Col>
           </Row>
 
@@ -29,14 +29,14 @@ const LoginPage = () => {
                   loginWithRedirect();
                 }}
               >
-                Iniciar sesión
+                Log In
               </Button>
             </Col>
           </Row>
 
           <Row>
             <div className="col">
-              <div id="LoginText"> ¿No tienes una cuenta? </div>
+              <div id="LoginText">You do not have an account? </div>
             </div>
           </Row>
 
@@ -57,7 +57,7 @@ const LoginPage = () => {
                     });
                 }}
               >
-                Crear cuenta
+                Create account
               </Button>
             </Col>
           </Row>

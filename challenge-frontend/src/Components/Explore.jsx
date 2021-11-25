@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row, Container, Spinner } from "reactstrap";
+import { Col, Row, Spinner } from "reactstrap";
 
 import { getAllUserTweets } from "../api/index";
 import Tweet from "./Tweet";
@@ -41,7 +41,7 @@ const Explore = () => {
                 picture={item.creatorPicture}
                 name={item.creatorName}
                 content={item.content}
-                date={item.date}
+                date={item.createdAt}
                 key={index}
               />
             </Col>

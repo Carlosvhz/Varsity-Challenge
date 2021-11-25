@@ -18,7 +18,7 @@ const Navbar = () => {
       <Row>
         <Col>
           <DivButton className="NavbarTitle">
-            Tuiter <BsChatLeftTextFill />{" "}
+            TwitterClone <BsChatLeftTextFill />{" "}
           </DivButton>
         </Col>
         <Col id="LogoutText">

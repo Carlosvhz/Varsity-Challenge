@@ -40,7 +40,7 @@ const MyTweets = () => {
                 picture={item.creatorPicture}
                 name={item.creatorName}
                 content={item.content}
-                date={item.date}
+                date={item.createdAt}
                 key={index}
               />
             </Col>

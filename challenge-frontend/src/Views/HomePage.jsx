@@ -28,7 +28,7 @@ const HomePage = () => {
 
   const { user } = useAuth0();
 
-  const [tab, setTab] = useState("Tweets");
+  const [tab, setTab] = useState("Explore");
   const [open, setOpen] = useState(false);
 
   /*Tweet states*/
@@ -144,39 +144,39 @@ const HomePage = () => {
               )}
             </Col>
           </Row>
+
+          <Modal isOpen={open} toggle={toggle}>
+            <ModalHeader>¿What happened?</ModalHeader>
+            <ModalBody>
+              <Row>
+                <Col>
+                  <Input
+                    type="textarea"
+                    name="content"
+                    value={content}
+                    onChange={(e) => {
+                      changeValue(e.currentTarget);
+                    }}
+                  />
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Button
+                    id="ModalButton"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleCreate();
+                    }}
+                  >
+                    Add Tweet
+                  </Button>
+                </Col>
+              </Row>
+            </ModalBody>
+          </Modal>
         </Container>
       </Container>
-
-      <Modal isOpen={open} toggle={toggle}>
-        <ModalHeader>¿What happened?</ModalHeader>
-        <ModalBody>
-          <Row>
-            <Col>
-              <Input
-                type="textarea"
-                name="content"
-                value={content}
-                onChange={(e) => {
-                  changeValue(e.currentTarget);
-                }}
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Button
-                className="HomePageButton"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleCreate();
-                }}
-              >
-                Add
-              </Button>
-            </Col>
-          </Row>
-        </ModalBody>
-      </Modal>
     </StandardLayout>
   );
 };

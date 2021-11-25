@@ -25,14 +25,18 @@ exports.findUser = async (req, res) => {
     const currentUser = await user.findOne({ email });
     if (currentUser)
       res.status(200).send({ message: "Success", data: currentUser });
-    else res.status(400).json({ message: "Bad Request", error });
+    else
+      res
+        .status(400)
+        .json({
+          message: "Bad Request",
+          error: "There is no user with this email",
+        });
   } catch (error) {
     console.log(error);
-    res
-      .status(400)
-      .json({
-        message: "Bad Request",
-        error: "There is no user with this email",
-      });
+    res.status(400).json({
+      message: "Bad Request",
+      error: "There is no user with this email",
+    });
   }
 };

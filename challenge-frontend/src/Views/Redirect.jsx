@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Container, Spinner, Col, Row } from "reactstrap";
+import { Container, Spinner } from "reactstrap";
 
 import useUser from "../Providers/useUser";
 

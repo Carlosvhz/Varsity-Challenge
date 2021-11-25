@@ -1,6 +1,5 @@
 .HomePage {
-  background-color: #37474F;
-
+  background-color: #212121;
   height: 100vh;
 }
 
@@ -21,15 +20,11 @@
 }
 
 .HomePageTitle:hover{
-  color: #272525;
-
-  font-size: 1.5rem;
-
+  color: #1976D2;
 }
 
 .HomePageTitleSelected {
-  color: #212121;
-  font-size: 1.5rem;
+  color: #0D47A1;
 }
 
 
@@ -54,13 +49,14 @@
 
 .HomePageButton:hover{
   background-color: transparent ;
-  color: #212121;
+  color: #0D47A1;
 
   border-radius: 6px;
-  border: 2px solid #212121;
+  border: 2px solid #0D47A1;
 }
+ 
 
-/*Modal Styles*/
-.HomePageModal {
-  background-color: #37474F;
+#ModalButton {
+  background-color: #212121 !important; 
+  margin: 10px 0;
 }
