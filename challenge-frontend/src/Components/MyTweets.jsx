@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row, Container, Spinner } from "reactstrap";
+import { Col, Row, Spinner } from "reactstrap";
 
 import { getCurrentUserTweets } from "../api/index";
 import Tweet from "./Tweet";

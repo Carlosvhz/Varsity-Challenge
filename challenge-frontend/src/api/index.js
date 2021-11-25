@@ -10,3 +10,6 @@ export const findUser = (email) => API.get(`/user/findUser/${email}`);
 export const createTweet = (data) => API.post("/tweet/createTweet", data);
 export const getCurrentUserTweets = (id) =>
   API.get(`/tweet/findCurrentUserTweets/${id}`);
+
+export const getAllUserTweets = (id) =>
+  API.get(`/tweet/findAllUserTweets/${id}`);

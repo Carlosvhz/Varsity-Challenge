@@ -35,3 +35,17 @@ exports.findCurrentUserTweets = async (req, res) => {
     res.status(400).json({ message: "Bad Request", error });
   }
 };
+
+/*Get all tweets except the current user tweets*/
+exports.findAllUserTweets = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const tweets = await tweet.find({
+      creatorId: { $not: mongoose.Types.ObjectId(id) },
+    });
+    res.status(200).json({ message: "Success", data: tweets });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ message: "Bad Request", error });
+  }
+};

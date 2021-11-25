@@ -20,6 +20,7 @@ import DivButton from "../Components/DivButton";
 
 // Importing Viwews Components
 import Explore from "../Components/Explore";
+import MyTweets from "../Components/MyTweets";
 
 import "./Styles/HomePage.css";
 
@@ -28,7 +29,7 @@ const HomePage = () => {
 
   const { user, isAuthenticated, isLoading } = useAuth0();
 
-  const [tab, setTab] = useState("Explore");
+  const [tab, setTab] = useState("Tweets");
   const [open, setOpen] = useState(false);
 
   /*Tweet states*/
@@ -130,7 +131,13 @@ const HomePage = () => {
           </Row>
 
           {/** sadawsdasdsadasdas  */}
-          {tab === "Follows" ? <></> : tab === "Tweets" ? <></> : <Explore />}
+          {tab === "Follows" ? (
+            <></>
+          ) : tab === "Tweets" ? (
+            <MyTweets />
+          ) : (
+            <Explore />
+          )}
           {/** sadawsdasdsadasdas  */}
         </Container>
       </Container>
