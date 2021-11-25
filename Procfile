@@ -1,1 +1,1 @@
-web: cd challenge-backend && npm start 
+web: cd challenge-backend && node index.js 
