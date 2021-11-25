@@ -2,16 +2,20 @@ const mongoose = require("mongoose");
 
 const tweetSchema = mongoose.Schema(
   {
-    creator_name: {
+    creatorId: {
       type: String,
       required: true,
+    },
+    creatorName: {
+      type: String,
+      require: true,
+    },
+    creatorPicture: {
+      type: String,
+      require: true,
     },
     content: {
       type: String,
-      required: true,
-    },
-    creationDate: {
-      type: Date,
       required: true,
     },
     isActive: {

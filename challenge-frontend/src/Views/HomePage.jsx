@@ -20,10 +20,10 @@ import useUser from "../Providers/useUser";
 import "./Styles/HomePage.css";
 
 const HomePage = () => {
-  const { currentUser } = useUser;
+  const { currentUser } = useUser();
 
   useEffect(() => {
-    console.log("Este es el usuario logeado HOMEPAGE: ", user.email);
+    console.log("Este es el usuario logeado HOMEPAGE: ", currentUser);
   }, []);
 
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -33,9 +33,10 @@ const HomePage = () => {
   const [content, setContent] = useState("");
 
   const body = {
-    creator_name: user.nickname,
+    creatorId: currentUser._id,
+    creatorName: user.nickname,
+    creatorPicture: user.picture,
     content,
-    creationDate: new Date(),
   };
 
   const changeValue = (e) => {

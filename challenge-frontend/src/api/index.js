@@ -8,3 +8,5 @@ export const findUser = (email) => API.get(`/user/findUser/${email}`);
 
 // Tweet endpoints
 export const createTweet = (data) => API.post("/tweet/createTweet", data);
+export const getCurrentUserTweets = (id) =>
+  API.get(`/tweet/findCurrentUserTweets/${id}`);
