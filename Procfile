@@ -1,1 +1,1 @@
-web: cd challenge-backend && node index.js 
+web: cd challenge-backend && nodemon index.js 
